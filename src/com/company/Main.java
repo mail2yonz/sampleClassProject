@@ -8,8 +8,6 @@ java bootcamp
  */
 
 
-
-
 package com.company;
 
 import java.util.ArrayList;
@@ -69,10 +67,16 @@ public class Main {
           pArrayList.add ( person );
 
           //Asks the user to enter another record or not and accepts from the keyboard
-          System.out.println ("Do you want to Enter another Person?(yes/no)" );
+          do{  System.out.println ("Do you want to Enter another Person?(yes/no)" );
               answere= keyboard.nextLine ();
+              if(!answere.equalsIgnoreCase ( "yes" )&&!answere.equalsIgnoreCase ( "no" ))
+              {
+                  System.out.println ("Invalid entry please enter yes or no" );
+              }
 
-      }while( answere.equalsIgnoreCase ("yes"));
+          }while(!answere.equalsIgnoreCase ( "yes" )&&!answere.equalsIgnoreCase ( "no" ));
+
+      }while( answere.equalsIgnoreCase ("yes")&&!answere.equalsIgnoreCase ( "no" ));
 
       //For each loop to display the firstName of the 5 persons
         System.out.println ("The first name of the Persons entered are:" );
